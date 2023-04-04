@@ -9,7 +9,7 @@
     <packaging>jar</packaging>
 
     <name>JavaConnection_MariaDB</name>
-    <url>https://www.github.com/Jouad/JavaConnection_MariaDB</url>
+    <url>https://www.github.com/Jouad01/JavaConnection_MariaDB</url>
 
     <properties>
         <!-- FIXME change it to the project's main class -->
