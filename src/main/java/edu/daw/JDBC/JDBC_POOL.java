@@ -67,7 +67,7 @@ public class JDBC_POOL {
             closeDatabaseConnectionPool();
         }
     }
-    private static void createUser(String first_name, String last_name, String email, LocalDate birthday) throws SQLException {
+    public static void createUser(String first_name, String last_name, String email, LocalDate birthday) throws SQLException {
         System.out.println("Creating user...");
         int rowsInserted;
         try (Connection connection = dataSource.getConnection()) {
@@ -83,7 +83,7 @@ public class JDBC_POOL {
         System.out.println("Files inserted: " + rowsInserted);
     }
 
-    private static void readUser() throws SQLException {
+    public static void readUser() throws SQLException {
         System.out.println("Reading all users...");
         try  (Connection connection = dataSource.getConnection()) {
             try (PreparedStatement statement = connection.prepareStatement("SELECT * FROM user")) {
@@ -105,7 +105,7 @@ public class JDBC_POOL {
         }
     }
 
-    private static void updateData(String first_name, String newEmail) throws SQLException {
+    public static void updateData(String first_name, String newEmail) throws SQLException {
         System.out.println("Data update...");
         try (Connection connection = dataSource.getConnection()) {
             try (PreparedStatement statement = connection.prepareStatement(" UPDATE user SET email = ? WHERE first_name = ?"))
@@ -119,7 +119,7 @@ public class JDBC_POOL {
         }
     }
 
-    private static void deleteData(String nameExpression) throws SQLException {
+    public static void deleteData(String nameExpression) throws SQLException {
         System.out.println("Deleting data...");
         try (Connection connection = dataSource.getConnection()) {
             try (PreparedStatement statement = connection.prepareStatement("DELETE FROM user WHERE first_name LIKE ?"))
