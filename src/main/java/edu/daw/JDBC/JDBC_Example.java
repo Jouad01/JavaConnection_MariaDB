@@ -8,7 +8,6 @@ public class JDBC {
         String user = "root";
         String password = "1234";
 
-//   statement
         Connection conn = null;
         Statement stmt = null;
 
@@ -16,17 +15,16 @@ public class JDBC {
             // conexion con la base de datos
             conn = DriverManager.getConnection(url, user, password);
 
-            // Creación del statement
             stmt = conn.createStatement();
 
             // consulta SQL
-            String sql ="INSERT INTO user (first_name, last_name, email, birthday) values ('jouad', 'el ouardi', 'ola@gmial.com', '1984-07-10') "; // Consulta para crear una tabla
-            stmt.executeUpdate(sql); // Ejecución de la consulta
+            String sql ="INSERT INTO user (first_name, last_name, email, birthday) values ('jouad', 'el ouardi', 'ola@gmial.com', '1984-07-10') ";
+            stmt.executeUpdate(sql);
 
             stmt.close();
             conn.close();
 
-            System.out.println("Insert realizado con éxito");
+            System.out.println("Insert with success");
         } catch (SQLException e) {
             System.err.println("Error: " + e.getMessage());
         }
