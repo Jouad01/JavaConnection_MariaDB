@@ -2,7 +2,7 @@ package edu.daw.JDBC;
 
 import java.sql.*;
 
-public class JDBC {
+public class JDBC_Example {
     public static void main(String[] args) {
         String url = "jdbc:mariadb://localhost:3306/library";
         String user = "root";
